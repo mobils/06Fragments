@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fragments</string>
+    <string name="first_button_text">Restaurant 1</string>
+    <string name="second_button_text">Restaurant 2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hola fragment</string>
+</resources>
