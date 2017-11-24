@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".PreferenciesActivity" android:theme="@style/ThemeOverlay.AppCompat.Dark">
+        </activity>
     </application>
 
 </manifest>

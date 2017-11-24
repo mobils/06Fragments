@@ -1,7 +1,7 @@
 package com.example.eva.fragments;
 
+import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -77,8 +77,10 @@ public class Fragment1 extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub listener.onButtonSelected("First button clicked");
-
+                /*Quan es clica, cal informar a la activity amb el listener, utilitzant la interficie*/
+                if (mListener != null) {
+                    mListener.onFragmentInteraction(v);
+                }
             }
         });
 
@@ -91,23 +93,30 @@ public class Fragment1 extends Fragment {
         });
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_1, container, false);
+        return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+    @Override
+    public void onAttach(Activity activity) {
+
+        super.onAttach(activity);
+        if (activity instanceof OnFragmentInteractionListener) {
+            mListener = (OnFragmentInteractionListener) activity;
+        } else {
+            throw new RuntimeException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
         }
     }
@@ -129,7 +138,10 @@ public class Fragment1 extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        /* Aquesta interficie l'han d'implementar les Activities que es vulguin comunicar amb
+        aquest fragment. Al mètode onAtach es controla això.
+         */
+        void onFragmentInteraction(View view);
+
     }
 }

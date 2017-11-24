@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+android:key="first_preferencescreen">
+
+    <PreferenceCategory android:title="Datos personales">
+        <EditTextPreference
+            android:key="playerName"
+            android:title="Nombre del jugador"
+            android:summary="Pulse para teclear el nombre del jugador" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Ajustes del juego">
+        <ListPreference android:key="figure" android:title="Tipo de figura"
+                        android:summary="Pulse para mostrar la lista"
+                        android:entries="@array/figures"
+                        android:entryValues="@array/figureCodes"
+                        android:dialogTitle="Elija la figura inicial"
+                        android:defaultValue="true"/>
+        <CheckBoxPreference android:key="music" android:title="Música de fondo"
+                            android:summary="Marque si desea escuchar música"
+                            android:defaultValue="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Conexion">
+    <CheckBoxPreference
+        android:key="wifi enabled" android:title="WiFi" />
+        <PreferenceScreen android:key="second_preferencescreen" android:title="WiFi settings">
+            <CheckBoxPreference android:key="prefer wifi" android:title="Prefer WiFi" />
+    ... other preferences here ...
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
