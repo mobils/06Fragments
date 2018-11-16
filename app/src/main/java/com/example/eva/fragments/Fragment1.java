@@ -92,6 +92,7 @@ public class Fragment1 extends Fragment {
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_1, container, false);
+        //return view;   //equivalent
     }
 
     // TODO: Rename method, update argument and hook method into UI event
