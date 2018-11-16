@@ -13,11 +13,11 @@
         android:id="@+id/botoinici"
         android:text="Botó per iniciar fragment 1"/>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/contenidorFragment1"
-    android:orientation="vertical">
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contenidorFragment1"
+        android:orientation="vertical">
+    </LinearLayout>
 
 </LinearLayout>
